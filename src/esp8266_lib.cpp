@@ -318,6 +318,13 @@ int16_t Esp8266::tcpRead(uint8_t *buf, size_t size)
 		buf[i] = tcpRead();
 }
 
+int Esp8266::tcpPeek()
+{
+	ASSERT(_tcpConnected);
+	readForAsync(0);
+	return _serial->peek();
+}
+
 int16_t Esp8266::tcpClose()
 {
 	char params[2];

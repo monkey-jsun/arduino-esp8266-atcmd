@@ -130,15 +130,13 @@ public:
 	int16_t tcpWrite(const uint8_t *buf, size_t size);
 	int16_t tcpRead(uint8_t *buf, size_t size);  // return size received; no waiting; <0 indicates error
 	uint8_t tcpRead();
+	int tcpPeek();		// return -1 is not available()
 	bool tcpAvailable();	// tcp data available
 	
 	int16_t ping(IPAddress ip);
 	int16_t ping(char * server);
 	
 	void rawTest(const char* cmd, uint16_t timeout_ms);	// send cmd over serial and display response for timeout_ms ms
-
-	friend class ESP8266Client;
-	friend class ESP8266Server;
 
 private:
 	
@@ -182,6 +180,6 @@ private:
 	uint16_t _tcpDataSize=0;	// 0: no tcp data to read
 };
 
-// extern Esp8266 esp8266;
+extern Esp8266 esp8266;
 
 #endif /* __esp8266_lib_h__ */
