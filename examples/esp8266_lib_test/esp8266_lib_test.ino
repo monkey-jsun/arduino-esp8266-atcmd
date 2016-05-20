@@ -6,8 +6,8 @@
 SoftwareSerial swSerial(8,9);
 Esp8266 esp8266(&swSerial);
 
-const char mySSID[] = "tzuming";
-const char myPSK[] = "5102991912";
+const char mySSID[] = "xzy_123";
+const char myPSK[] = "111222333444";
 
 const char server[] = "example.com";
 const char httpRequest[] = "GET / HTTP/1.1\r\n"
