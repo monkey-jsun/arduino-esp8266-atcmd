@@ -95,6 +95,10 @@ enum esp8266_tcp_state {
 	ESP8266_TCP_CLIENT
 };
 
+// general rules about return value
+//  == 0: successful
+//  >0 : sucessful with N chars read in buffer
+//  <0 : error defined in ESP8266_CMD_RSP
 class Esp8266
 {
 public:
@@ -130,8 +134,8 @@ public:
 	int16_t tcpWrite(const uint8_t *buf, size_t size);
 	int16_t tcpRead(uint8_t *buf, size_t size);  // return size received; no waiting; <0 indicates error
 	uint8_t tcpRead();
-	int tcpPeek();		// return -1 is not available()
-	bool tcpAvailable();	// tcp data available
+	int tcpPeek();		// return -1 is none is available
+	int tcpAvailable();	// tcp data available for read in bytes
 	
 	int16_t ping(IPAddress ip);
 	int16_t ping(char * server);

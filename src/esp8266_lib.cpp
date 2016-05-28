@@ -295,11 +295,11 @@ int16_t Esp8266::tcpWrite(const uint8_t *buf, size_t size)
 	return rsp;
 }
 
-bool Esp8266::tcpAvailable()
+int Esp8266::tcpAvailable()
 {
 	ASSERT(_tcpConnected);
 	readForAsync(0);
-	return _tcpDataSize > 0;
+	return _tcpDataSize;
 }
 
 uint8_t Esp8266::tcpRead()

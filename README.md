@@ -1,19 +1,22 @@
 # arduino-esp8266-atcmd
-Library for Arduino UNO talking to an ESP8266 Wi-Fi board (e.g., Adafruit Huzzah) via AT command sets 
+Library for Arduino board talking to an ESP8266 Wi-Fi board (e.g., Adafruit HUZZAH or Sparkfun ESP8266 shield) using AT command sets over serial UART port.
+This is NOT a wifi library for Arduino running natively on an ESP8266 board.
 
-# Hardware Setup
+Much of this library is derived from [*Sparkfun esp8266 library*](https://github.com/sparkfun/SparkFun_ESP8266_AT_Arduino_Library).  However, the change deviates so much that it becomes impossible to merge back.  So instead I created a new library.
 
-Note this library is for Arduino UNO board (or similar Arduino boards) 
-to talk a ESP8266 wifi breakout board via AT command set over UART.  
-This is NOT a wifi library for running Arduino natively on the ESP8266 board.
+In the rest of this file, I'll assume Arduino UNO board and HUZZAH breakout board.
 
-In the following example, we will assume Arduino UNO board and connecting with Adafruit Huzzah ESP8266 wifi breakout board.
+# Hardware connection
 
-Below is a typical setup: (TODO)
+Note you need to prepare HUZZAH board to run the original AT command firmware, not the LUA firmware from Adafruit.  See below for instructions on how to do that.
+
+Below is a typical setup: 
 
 * Connect esp8266 ground to Arduino ground
 * Connect esp8266 V+ to 5V on Arduino board
 * Connect esp8266 RX/TX pins to any two digital pins on Arduino except 0,1
+
+http://junsun.net/local/esp8266-huzzah/arduino-esp8266-connection.png
 
 # Flashing ESP8266 AT firmware
 

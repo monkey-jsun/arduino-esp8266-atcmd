@@ -31,7 +31,12 @@ int Esp8266Client::connect(IPAddress ip, uint16_t port, uint32_t keepAlive)
 int Esp8266Client::connect(const char* host, uint16_t port, uint32_t keepAlive) 
 {
 	// TODO: server-bound client cannot call this
-	return esp8266.tcpConnect(host, port, keepAlive);
+	int ret = esp8266.tcpConnect(host, port, keepAlive);
+	if(ret >= 0) 
+		// Arduino client mandates returning 1 on success
+		return 1;
+	else
+		return ret;
 }
 
 size_t Esp8266Client::write(uint8_t c)

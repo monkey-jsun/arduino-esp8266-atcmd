@@ -32,7 +32,7 @@ const char ESP8266_ECHO_DISABLE[] = "E0"; // AT commands echo
 // WiFi Functions //
 ////////////////////
 //const char ESP8266_WIFI_MODE[] = "+CWMODE"; // WiFi mode (sta/AP/sta+AP)
-const char ESP8266_CONNECT_AP[] = "+CWJAP"; // Connect to AP
+const char ESP8266_CONNECT_AP[] = "+CWJAP_CUR"; // Connect to AP
 //!const char ESP8266_LIST_AP[] = "+CWLAP"; // List available AP's
 const char ESP8266_DISCONNECT[] = "+CWQAP"; // Disconnect from AP
 //!const char ESP8266_AP_CONFIG[] = "+CWSAP"; // Set softAP configuration
